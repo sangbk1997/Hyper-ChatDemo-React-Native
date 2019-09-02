@@ -5,7 +5,10 @@ import BoxShortInfoUser from "../_components/boxs/box-short-info-user";
 import {Button, Icon, ListItem} from "react-native-elements";
 import {userActions} from "../_actions";
 import {connect} from "react-redux";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
+import {configConstants, userConstants} from "../_constants";
+import {showMessage} from "react-native-flash-message";
 
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
@@ -97,7 +100,7 @@ class HeaderRightAddMembers extends React.Component {
                         title="Kết thúc"
                         type="outline"
                         titleStyle={{color: '#fff'}}
-                        onPress={this.props.navigation.getParam('ChatScreen')}
+                        onPress={() => this.props.navigation.getParam('ChatScreen')}
                     />
                 </View>
             </View>
@@ -108,11 +111,88 @@ class HeaderRightAddMembers extends React.Component {
 class AddMembersToChatScreen extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            DEFAULT_NUMBER_SUGESST: 20,
+            DEFAULT_NUMBER_OFFSET: 0,
+            baseUrl: configConstants.PREFIX_APP_SERVER,
+            channelId: '',
+            listUserSelected: [],
+            suggestPeople: []
+        }
+        showMessage({
+            message: 'Khởi tạo add-member-to-chat',
+            type: 'info'
+        })
     }
 
     componentDidMount() {
         this.props.navigation.setParams({AddMembersFinishScreen: this._goAddMembersFinishScreen});
-        console.log('Mount New Group Process')
+        console.log('Mount New Group Process');
+        this.listUserSuggest();
+    }
+
+    listUserSuggest = () => {
+        let url = this.state.baseUrl + 'users/suggestedByChannel';
+        // let url = this.baseUrl + 'users';
+        let form = {
+            channelId: this.props.requestChat['channelId'],
+            number: this.DEFAULT_NUMBER_SUGESST,
+            offset: this.DEFAULT_NUMBER_OFFSET
+        }
+        hyperRequest.post(url, form).then(res => {
+            if ($bean.isNotEmpty(res.data)) {
+                this.setState({suggestPeople: res.data});
+            }
+        })
+    }
+
+    // Thêm người hoặc xóa người khi mới thêm kênh
+    toggleUser = (user) => {
+        let listUserSelected = this.state.listUserSelected;
+        if ($bean.isNotEmpty(listUserSelected)) {
+            const index = listUserSelected.indexOf(user);
+            if (index !== -1) {
+                listUserSelected.splice(index, 1);
+            } else {
+                listUserSelected.push(user);
+            }
+        } else {
+            listUserSelected.push(user);
+        }
+        this.setState({
+            listUserSelected: listUserSelected
+        })
+    }
+
+    checkUserSelected = (user) => {
+        let result = false;
+        for (let i = 0; i < this.state.listUserSelected.length; i++) {
+            if (user.id == this.state.listUserSelected[i]) {
+                result = true;
+                return result;
+            }
+        }
+        return result;
+    }
+
+    // Tạo kênh
+    addUser = () => {
+        // $('#modalDetailAddUserToChat').modal('hide');
+        const url = this.state.baseUrl + 'users/addUsersToChat';
+        if ($bean.isNotEmpty(this.state.listUserSelected)) {
+            let userIds = [];
+            for (let i = 0; i < this.state.listUserSelected.length; i++) {
+                userIds.push(this.state.listUserSelected[i].id);
+            }
+            const form = {
+                channelId: this.props.requestChat['channelId'],
+                userIds: userIds
+            };
+            hyperRequest.post(url, form).then(res => {
+                console.log('Add user to chat success ');
+                console.log(res.data);
+            });
+        }
     }
 
 
@@ -132,6 +212,7 @@ class AddMembersToChatScreen extends React.Component {
     }
 
     _goAddMembersFinishScreen = () => {
+        this.addUser();
         this.props.navigation.navigate('AddMembersFinishScreen');
     }
 
@@ -150,7 +231,7 @@ class AddMembersToChatScreen extends React.Component {
     )
 
     renderAvatar = ({item}) => (
-        <BoxShortInfoUser ChatDetailScreen={this._goChatDetailScreen}/>
+        <BoxShortInfoUser contact={item} callBack={this._goChatDetailScreen}/>
     )
 
 
@@ -301,8 +382,8 @@ const styles = StyleSheet.create({
 });
 
 function mapState(state) {
-    const {user} = state.registration
-    return {user};
+    const {requestChat} = state.users
+    return {requestChat};
 }
 
 const actionCreators = {

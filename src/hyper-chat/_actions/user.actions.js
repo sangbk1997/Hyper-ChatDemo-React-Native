@@ -10,7 +10,16 @@ export const userActions = {
     register,
     accessChat,
     getAll,
-    delete: _delete
+    delete: _delete,
+    suggestContacts,
+    suggestChats,
+    sendRequestChat,
+    sendInfoChat,
+    sendInfoContact,
+    sendSelectedContacts,
+    addUserToNewGroup,
+    newChat,
+    newMessenger
 }
 
 function storeUser(user) {
@@ -123,14 +132,10 @@ function register(user) {
 
 function accessChat(chat) {
     return dispatch => {
-        dispatch(request(chat));
-
-        function request(chat) {
-            return {
-                type: userConstants.ACCESS_CHAT,
-                payload: chat
-            }
-        }
+        dispatch({
+            type: userConstants.ACCESS_CHAT,
+            payload: chat
+        })
     }
 }
 
@@ -200,5 +205,88 @@ function _delete(id) {
             id,
             error
         }
+    }
+}
+
+function suggestContacts(contacts) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.SUGGEST_CONTACTS,
+            payload: contacts
+        })
+    }
+}
+
+function suggestChats(chats) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.SUGGEST_CHATS,
+            payload: chats
+        })
+    }
+}
+
+function sendRequestChat(requestChat) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.REQUEST_CHAT,
+            payload: requestChat
+        })
+    }
+}
+
+function sendInfoChat(infoChat) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.INFO_CHAT,
+            payload: infoChat
+        })
+    }
+}
+
+
+function sendInfoContact(contact) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.INFO_CONTACT,
+            payload: contact
+        })
+    }
+}
+
+
+function sendSelectedContacts(contacts) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.SELECTED_CONTACTS_TO_NEW_CHAT,
+            payload: contacts
+        })
+    }
+}
+
+function addUserToNewGroup(contact) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.SELECTED_CONTACTS,
+            payload: contact
+        })
+    }
+}
+
+function newChat(chat) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.NEW_CHAT,
+            payload: chat
+        })
+    }
+}
+
+function newMessenger(messenger) {
+    return dispatch => {
+        dispatch({
+            type: userConstants.NEW_MESSENGER,
+            payload: messenger
+        })
     }
 }

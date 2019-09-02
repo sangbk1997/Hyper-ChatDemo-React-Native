@@ -6,7 +6,11 @@ import ShortInfoUser from "./new-chat-start.screen";
 import {userActions} from "../_actions";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {connect} from "react-redux";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
+import {configConstants} from "../_constants";
+
+
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
 
@@ -99,11 +103,20 @@ class HeaderRightNewGroup extends React.Component {
 class NewGroupFinishScreen extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            titleChat: '',
+            selectedContacts: [],
+            baseUrl: configConstants.PREFIX_APP_SERVER,
+        }
+        this.removeContact = this.removeContact.bind(this);
+        this.addChannel = this.addChannel.bind(this);
     }
 
     componentDidMount() {
         this.props.navigation.setParams({goToChatPage: this._goChatScreen});
-        console.log('Mount New Group Finish')
+        this.setState({
+            selectedContacts: this.props.selectedContacts
+        })
     }
 
     static navigationOptions = ({navigation}) => {
@@ -118,24 +131,68 @@ class NewGroupFinishScreen extends React.Component {
     };
 
     _goChatScreen = () => {
-        console.log('Go to ChatPage');
+        this.addChannel();
         this.props.navigation.navigate('ChatScreen');
     }
+
 
     keyExtractor = (item, index) => index.toString()
 
     renderItem = ({item}) => (
         <ListItem
-            title={item.name}
-            subtitle={item.subtitle}
+            title={item.username}
+            subtitle={item.email}
             leftAvatar={{
-                source: item.avatar_url && {uri: item.avatar_url},
-                title: item.name[0]
+                source: list[0].avatar_url && {uri: list[0].avatar_url},
+                title: list[0].email
             }}
-            onPress={() => this.props.navigation.navigate('ChatDetailScreen')}
+            rightIcon={
+                <Icon
+                    // name={item.selected ? 'toggle-on' : 'toggle-off'}
+                    name='close'
+                    size={24}
+                    color='red'
+                    type='font-awesome'
+                    onPress={() => this.removeContact(item)}
+                />
+            }
         />
     )
 
+
+    // Tạo kênh
+    addChannel = () => {
+        const url = this.state.baseUrl + 'channels/addChat';
+        let members = [];
+        if ($bean.isNotEmpty(this.state.selectedContacts)) {
+            for (let i = 0; i < this.state.selectedContacts.length; i++) {
+                members.push(this.state.selectedContacts[i].id);
+            }
+        }
+        const form = {
+            title: this.state.titleChat,
+            members: members
+        };
+        hyperRequest.post(url, form).then(res => {
+            console.log('Add channel success ');
+            console.log(res.data);
+            // back home
+        });
+    }
+
+    removeContact = (contact) => {
+        if ($bean.isNotEmpty(contact) && $bean.isNotEmpty(this.state.selectedContacts)) {
+            let selectedContacts = this.state.selectedContacts;
+            for (let i = 0; i < selectedContacts.length; i++) {
+                if (selectedContacts[i].id == contact.id) {
+                    selectedContacts.splice(i, 1);
+                }
+            }
+            this.setState({
+                selectedContacts: selectedContacts
+            })
+        }
+    }
 
 
     render() {
@@ -145,14 +202,17 @@ class NewGroupFinishScreen extends React.Component {
                 <View style={styles.content}>
                     <View style={styles.box_chat_group}>
                         <Text style={styles.chat_group_title}>Tên nhóm</Text>
-                        <Input inputStyle={styles.input_box_name_group} placeholder="Nhập tên nhóm"/>
+                        <Input onChangeText={(titleChat) => this.setState({titleChat})}
+                               value={this.state.titleChat} inputStyle={styles.input_box_name_group}
+                               placeholder="Nhập tên nhóm"/>
                     </View>
                     <View>
                         <Text style={styles.title}>Thành viên</Text>
                         <View style={styles.list_chat_box}>
                             <FlatList
                                 keyExtractor={this.keyExtractor}
-                                data={list}
+                                data={this.state.selectedContacts}
+                                extraData={this.state}
                                 renderItem={this.renderItem}
                             />
                         </View>
@@ -207,11 +267,13 @@ const styles = StyleSheet.create({
 
 function mapState(state) {
     const {user} = state.registration
-    return {user};
+    const {selectedContactsToNewChat} = state.users
+    return {user: user, selectedContacts: selectedContactsToNewChat};
 }
 
 const actionCreators = {
-    login: userActions.login
+    login: userActions.login,
+
 };
 
 const connectedToNewGroupFinishScreen = connect(mapState, actionCreators)(NewGroupFinishScreen);

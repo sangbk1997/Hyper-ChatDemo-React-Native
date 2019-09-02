@@ -3,7 +3,7 @@ import {Image, StyleSheet, Text, View, FlatList} from 'react-native';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 import BoxShortInfoUser from "../_components/boxs/box-short-info-user";
 import {Icon, SearchBar, ListItem, Button} from "react-native-elements";
-import axios from 'axios'
+import {hyperRequest} from '../_constants/hyper-request';
 import {$bean} from "../static/js/hyper/hyd-bean-utils";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
@@ -117,39 +117,13 @@ class ChatScreen extends React.Component {
         super(props);
         // console.log(pushStreamClient);
         this.state = {
-            PUSH_STREAM_SERVER: '172.20.30.107',
-            // ENTER_KEY_CODE = 13;
             DEFAULT_NUMBER_REQUEST: 10,
-            // DEFAULT_NUMBER_MESSAGE = 20;
             DEFAULT_NUMBER_USER: 20,
             DEFAULT_NUMBER_CHANNEL: 20,
-            // DEFAULT_NUMBER_OFSET = 0;
-            PREFIX_MARK_ELEMENT: 'mark-positon-',
-            // ROLE_IS_USER = 'USER';
-            // ROLE_IS_CHANNEL = 'CHANNEL';
-            // ROLE_IS_MESSENGER = 'MESSENGER';
-            // CONNECTION_STATUS_NOT_CONNECT = 'NOT_CONNECTED';
-            CONNECTION_STATUS_PENDING: 'PENDING',
-            CONNECTION_STATUS_CONNECTED: 'CONNECTED',
             IS_ADMIN: true,
             IS_NOT_ADMIN: false,
             STATUS_SUBCRIBE: true,
             STATUS_UNSUBCRIBE: false,
-            STATUS_PENDING: 'PENDING',
-            STATUS_ACCEPTED: 'ACCEPTED',
-            STATUS_DISCARDED: 'DISCARDED',
-            STATUS_REJECTED: 'REJECTED',
-            STATUS_DISABLED: 'DISABLED',
-            STATUS_DELETED: 'DELETED',
-            ACTION_UNREAD: 'UNREAD',
-            ACTION_READED: 'READED',
-            STATUS_ORIGINAL: 'ORIGINAL',
-            // STATUS_EDITED = 'EDITED';
-            TYPE_REQUEST_USER_CHAT: 'REQUEST_CHAT_GROUP',
-            TYPE_REQUEST_CHAT_USER: 'REQUEST_CHAT_USER',
-            TYPE_CHAT_GROUP: 'CHAT_GROUP',
-            // TYPE_CHAT_CONTACT = 'CHAT_CONTACT';
-            // TYPE_ROLE_PRIMARY = 'PRIMARY';
             TYPE_ROLE_ATTACHED: 'ATTACHED',
             TYPE_ROLE_NOTIFIED: 'NOTIFIED',
             TYPE_NEW_MESSENGER: 'NEW_MESSENGER',
@@ -164,10 +138,6 @@ class ChatScreen extends React.Component {
             TYPE_NEW_CHANNEL: 'NEW_CHANNEL',
             TYPE_UPDATED_CHANNEL: 'UPDATED_CHANNEL',
             TYPE_DELETED_CHANNEL: 'DELETED_CHANNEL',
-            // TYPE_MESSENGER_TEXT = 'TEXT';
-            // TYPE_MESSENGER_IMAGE = 'IMAGE';
-            // TYPE_MESSENGER_LINK = 'LINK';
-            // TYPE_MESSENGER_FILE = 'FILE';
             STATUS_NOTIFICATION: true,
             STATUS_NOT_NOTIFICATION: false,
             ZERO_POSITION: 0,
@@ -223,11 +193,17 @@ class ChatScreen extends React.Component {
 
         }
 
+        showMessage({
+            message: 'Welcome Chat',
+            type: 'info'
+        })
+
         this.getLinkChannels = this.getLinkChannels.bind(this);
         this.listenChannel = this.listenChannel.bind(this);
         this.subChannel = this.subChannel.bind(this);
         this.unSubChannel = this.unSubChannel.bind(this);
         this.messageReceived = this.messageReceived.bind(this);
+        this.resetViewChat = this.resetViewChat.bind(this);
         this.getChannels = this.getChannels.bind(this);
         this.searchChannels = this.searchChannels.bind(this);
         this.moreChannels = this.moreChannels.bind(this);
@@ -241,27 +217,42 @@ class ChatScreen extends React.Component {
         this.countUnreadChats = this.countUnreadChats.bind(this);
         this.listContacts = this.listContacts.bind(this);
         this.getMoreContacts = this.getMoreContacts.bind(this);
-        this.notifiedNewMessenger = this.notifiedNewMessenger.bind(this);
-        this.notifiedUpdateMessenger = this.notifiedUpdateMessenger.bind(this);
-        this.notifiedDeleteMessenger = this.notifiedDeleteMessenger.bind(this);
-        this.notifiedNewUserChannel = this.notifiedNewUserChannel.bind(this);
-        this.notifiedUpdateUserChannel = this.notifiedUpdateUserChannel.bind(this);
-        this.notifiedDeleteUserChannel = this.notifiedDeleteUserChannel.bind(this);
+        // this.notifiedNewMessenger = this.notifiedNewMessenger.bind(this);
+        // this.notifiedUpdateMessenger = this.notifiedUpdateMessenger.bind(this);
+        // this.notifiedDeleteMessenger = this.notifiedDeleteMessenger.bind(this);
+        // this.notifiedNewUserChannel = this.notifiedNewUserChannel.bind(this);
+        // this.notifiedUpdateUserChannel = this.notifiedUpdateUserChannel.bind(this);
+        // this.notifiedDeleteUserChannel = this.notifiedDeleteUserChannel.bind(this);
         this.changeSuggestedChats = this.changeSuggestedChats.bind(this);
-        this.sendMessage = this.sendMessage.bind(this);
 
         this.getLinkChannels();
         this.getChannels(10);
         this.listContacts(10, 0);
     }
 
+    componentDidMount() {
+        this.props.navigation.setParams({goLandPageScreen: this._goLandPageScreen});
+        this.props.navigation.setParams({goUserProfileSettingScreen: this._goUserProfileSettingScreen});
+        this.props.navigation.setParams({goNewChatPageStart: this._goNewChatStartScreen});
+        this.setState({
+            suggestedChats: this.props.suggestedChats || []
+        })
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.newChat !== this.props.newChat) {
+            // Do whatever you want
+            if ($bean.isNotEmpty(this.props.newChat) && (this.props.newChat['value'].userId == this.props.user['id'])) {
+                this.getChat(this.props.newChat['value']['channelId']);
+            }
+        }
+    }
+
 
     getLinkChannels = () => {
         let url = this.state.baseUrl + 'userChannels/listByUser';
-        let form = {
-            userId: this.props.user.id
-        }
-        axios.post(url, form).then(res => {
+        let form = {}
+        hyperRequest.post(url, form).then(res => {
             console.log('All Link  Channel');
             console.log(res.data);
             this.setState({linkToChannels: res.data});
@@ -279,10 +270,9 @@ class ChatScreen extends React.Component {
     listenChannel = (channelId) => {
         const url = this.state.baseUrl + 'subChannel';
         const formData = {
-            userId: this.props.user.id,
             channelId: channelId
         };
-        axios.post(url, formData).then(res => {
+        hyperRequest.post(url, formData).then(res => {
             if ($bean.isNotEmpty(res.data) && res.data['notification'] == this.state.STATUS_NOTIFICATION) {
                 this.subChannel(res.data['channelId']);
             }
@@ -293,21 +283,6 @@ class ChatScreen extends React.Component {
 
 // subcribe channel
     subChannel = (channelId) => {
-        // console.log('Subcribe');
-        // console.log('Count sub channel : ' + this.pushStreamClient.channelsCount);
-        // this.pushStreamClient.disconnect();
-        // const option = null;
-        // console.log(this.pushStreamClient.channels);
-        // // this.removeAllChannel();
-        // // this.pushStreamClient.addChannel("hyper", option);
-        // this.pushStreamClient.addChannel(channelId, option);
-        // this.pushStreamClient.onmessage = this.messageReceived.bind(this);
-        // this.pushStreamClient.connect();
-        // console.log('Request Client');
-        // console.log(this.pushStreamClient.connect());
-        // console.log('Count sub channel : ' + this.pushStreamClient.channelsCount);
-
-
         var ws = new WebSocket('ws://172.20.30.107/ws?channels=' + channelId)
         ws.onopen = () => {
             // connection opened
@@ -361,8 +336,7 @@ class ChatScreen extends React.Component {
             switch (this.state.dataFromPushstream['type']) {
 
                 case this.state.TYPE_NEW_MESSENGER: {
-                    // this.state.globalService.hasNewMessenger.next(this.state.dataFromPushstream);
-                    //redux
+                    this.props.hasNewMessenger(this.state.dataFromPushstream);
                     break;
                 }
                 case this.state.TYPE_UPDATED_MESSENGER: {
@@ -386,11 +360,11 @@ class ChatScreen extends React.Component {
                     break;
                 }
                 case this.state.TYPE_NEW_USER_CHANNEL: {
-                    // this.state.globalService.hasNewUserChannel.next(this.state.dataFromPushstream);
+                    this.props.hasNewChat(this.state.dataFromPushstream);
                     //redux
                     let data = this.state.dataFromPushstream;
                     if ($bean.isNotEmpty(data)) {
-                        if (data['value']['userId'] == this.state.userLogin.id) {
+                        if (data['value']['userId'] == this.props.user.id) {
                             this.subChannel(data['value']['channelId']);
                         }
                     }
@@ -436,22 +410,23 @@ class ChatScreen extends React.Component {
 
     //  Làm chức năng thực thi với Chats
 
-    // resetViewChat() {
-    //     this.suggestedChats = [];
-    //     this.unreadChats = 0;
-    //     this.statusUserChannels = {};
-    //     this.numberLoadUserChat = 0;
-    //     this.modifiedChats = [];
-    // }
+    resetViewChat() {
+        this.setState({
+            suggestedChats: [],
+            unreadChats: 0,
+            statusUserChannels: {},
+            numberLoadUserChat: 0,
+            modifiedChats: [],
+        })
+    }
 
     getChannels = (number) => {
         let url = this.state.baseUrl + 'channels/listByUser';
         let form = {
-            userId: this.props.user.id,
             number: number
         }
-        axios.post(url, form).then(res => {
-            // this.resetViewChat();
+        hyperRequest.post(url, form).then(res => {
+            this.resetViewChat();
             if ($bean.isNotEmpty(res.data)) {
                 this.setState({suggestedChats: res.data['channels'], availbleChats: res.data['availbleNumber']});
                 console.log('My Channels');
@@ -464,10 +439,11 @@ class ChatScreen extends React.Component {
                         this.setState({modifiedChats: modifiedChats.push(objModified)});
                         this.getStatusUserChat(this.state.suggestedChats[i].id);
                     }
-                    // let sortChatsByTimeWorking = this.state.modifiedChats;
+                    let sortChatsByTimeWorking = this.state.modifiedChats;
                     // this.sortChatsByTimeWorking(sortChatsByTimeWorking);
                     // this.setState({modifiedChats: sortChatsByTimeWorking});
                     this.setState({suggestedChats: modifiedChats});
+                    this.props.suggestChats(modifiedChats);
                     this.changeSuggestedChats();
                 }
             }
@@ -480,7 +456,7 @@ class ChatScreen extends React.Component {
             number: number,
             value: value
         }
-        axios.post(url, form).then(res => {
+        hyperRequest.post(url, form).then(res => {
             // this.resetViewChat();
             if ($bean.isNotEmpty(res.data)) {
                 this.setState({suggestedChats: res.data['channels'], availbleChats: res.data['availbleNumber']});
@@ -530,13 +506,14 @@ class ChatScreen extends React.Component {
     }
 
     sortChatsByTimeWorking = (chats) => {
-        if ($bean.isNotEmpty(chats)) {
-            chats.sort(function (a, b) {
-                return b['lastWorkingDate'] - a['lastWorkingDate'];
-            })
-            console.log('Chats after sort');
-            console.log(chats);
-        }
+        // if ($bean.isNotEmpty(chats)) {
+        //     // chats.sort(function (a, b) {
+        //     //     return b['lastWorkingDate'] - a['lastWorkingDate'];
+        //     // })
+        //     console.log('Chats after sort');
+        //     console.log(chats);
+        // }
+        return chats;
     }
 
     getFormateDate = (inputTimes) => {
@@ -558,11 +535,11 @@ class ChatScreen extends React.Component {
     }
 
     getChat = (channelId) => {
-        let url = this.baseUrl + 'channels/viewChannel';
+        let url = this.state.baseUrl + 'channels/viewChannel';
         let form = {
             channelId: channelId
         }
-        axios.post(url, form).then(res => {
+        hyperRequest.post(url, form).then(res => {
             if ($bean.isNotEmpty(res.data)) {
                 let found = false;
                 res.data = this.modifiedViewChannel(res.data);
@@ -584,8 +561,8 @@ class ChatScreen extends React.Component {
                     newSuggestedChats.splice(0, 0, res.data);
                     this.setState({suggestedChats: newSuggestedChats});
                 }
-                this.getStatusUserChat(res.data['id']);
-                this.changeSuggestedChats();
+                // this.getStatusUserChat(res.data['id']);
+                // this.changeSuggestedChats();
             }
         })
     }
@@ -593,10 +570,9 @@ class ChatScreen extends React.Component {
     getStatusUserChat = (channelId) => {
         let url = this.state.baseUrl + 'channels/statusUserChannel';
         let form = {
-            userId: this.props.user.id,
             channelId: channelId
         }
-        axios.post(url, form).then(res => {
+        hyperRequest.post(url, form).then(res => {
             if ($bean.isNotEmpty(res.data)) {
                 let newStatusUserChannels = this.state.statusUserChannels;
                 newStatusUserChannels[res.data['channelId']] = res.data['unReadMessengers'];
@@ -636,13 +612,13 @@ class ChatScreen extends React.Component {
     listContacts = (number, offset) => {
         const url = this.state.baseUrl + 'users/suggested';
         let form = {
-            userLogin: this.props.user,
             number: number,
             offset: offset
         }
-        axios.post(url, form).then(res => {
+        hyperRequest.post(url, form).then(res => {
             if ($bean.isNotEmpty(res.data)) {
                 this.setState({suggestedContacts: res.data});
+                this.props.suggestContacts(res.data);
             }
         });
     }
@@ -653,104 +629,105 @@ class ChatScreen extends React.Component {
             number: number,
             offset: offset
         }
-        axios.post(url, form).then(res => {
+        hyperRequest.post(url, form).then(res => {
             if ($bean.isNotEmpty(res.data)) {
                 let tempData: any = [];
                 tempData = res.data;
                 let newSuggestedContacts = this.state.suggestedContacts;
                 for (let i = 0; i < tempData.length; i++) {
-                    this.setState({suggestedContacts: newSuggestedContacts.push(tempData[i])});
+                    newSuggestedContacts.push(tempData[i]);
                 }
+                this.setState({suggestedContacts: newSuggestedContacts});
             }
         });
     }
 
-    notifiedNewMessenger = (data) => {
-        if ($bean.isNotEmpty(data)) {
-            let found = false;
-            if ($bean.isNotEmpty(this.state.suggestedChats)) {
-                for (let i = 0; i < this.state.suggestedChats.length; i++) {
-                    if (this.state.suggestedChats[i].id == data['channelId']) {
-                        found = true;
-                        this.state.isArrangeChat = true;
-                        this.state.suggestedChats[i]['lastMessengerId'] = data.value.id;
-                        this.state.suggestedChats[i]['lastMessage'] = data.value.message;
-                        this.state.suggestedChats[i]['lastWorkingDate'] = new Date(data.value.createdAt).getTime();
-                        this.state.suggestedChats[i]['dateFormat'] = this.getFormateDate(new Date(data.value.createdAt).getTime());
-                        this.state.statusUserChannels[data['channelId']]++;
-                        if ($bean.isNotEmpty(this.state.requestChat) && (data['channelId'] != this.state.requestChat.channelId) && (i != 0)) {
-                            let infoChat = this.state.suggestedChats[i];
-                            this.state.suggestedChats.splice(i, 1);
-                            this.state.suggestedChats.splice(0, 0, infoChat);
-                        }
-                        this.countUnreadChats();
-                        break;
-                    }
-                }
-            }
-            if (!found) {
-                this.getChat(data['channelId']);
-            }
-        }
-    }
-
-    notifiedUpdateMessenger = (data) => {
-        if ($bean.isNotEmpty(data) && $bean.isNotEmpty(this.state.suggestedChats)) {
-            for (let i = 0; i < this.suggestedChats.length; i++) {
-                if (this.state.suggestedChats[i].id == data['channelId']) {
-                    if (this.state.suggestedChats[i]['lastMessengerId'] == data['value'].id) {
-                        this.state.suggestedChats[i]['lastMessage'] = data.value.message;
-                        this.state.suggestedChats[i]['lastWorkingDate'] = new Date(data.value.createdAt).getTime();
-                        this.state.suggestedChats[i]['dateFormat'] = this.getFormateDate(new Date(data.value.createdAt).getTime());
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    notifiedDeleteMessenger = (data) => {
-        if ($bean.isNotEmpty(data) && $bean.isNotEmpty(this.state.suggestedChats)) {
-            for (let i = 0; i < this.state.suggestedChats.length; i++) {
-                if (this.state.suggestedChats[i].id == data['channelId']) {
-                    if (this.state.suggestedChats[i]['lastMessengerId'] == data['value'].id) {
-                        // Load lại thông tin kênh chat
-                        this.getChat(this.state.suggestedChats[i].id);
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
+    // notifiedNewMessenger = (data) => {
+    //     if ($bean.isNotEmpty(data)) {
+    //         let found = false;
+    //         if ($bean.isNotEmpty(this.state.suggestedChats)) {
+    //             for (let i = 0; i < this.state.suggestedChats.length; i++) {
+    //                 if (this.state.suggestedChats[i].id == data['channelId']) {
+    //                     found = true;
+    //                     this.state.isArrangeChat = true;
+    //                     this.state.suggestedChats[i]['lastMessengerId'] = data.value.id;
+    //                     this.state.suggestedChats[i]['lastMessage'] = data.value.message;
+    //                     this.state.suggestedChats[i]['lastWorkingDate'] = new Date(data.value.createdAt).getTime();
+    //                     this.state.suggestedChats[i]['dateFormat'] = this.getFormateDate(new Date(data.value.createdAt).getTime());
+    //                     this.state.statusUserChannels[data['channelId']]++;
+    //                     if ($bean.isNotEmpty(this.state.requestChat) && (data['channelId'] != this.state.requestChat.channelId) && (i != 0)) {
+    //                         let infoChat = this.state.suggestedChats[i];
+    //                         this.state.suggestedChats.splice(i, 1);
+    //                         this.state.suggestedChats.splice(0, 0, infoChat);
+    //                     }
+    //                     this.countUnreadChats();
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //         if (!found) {
+    //             this.getChat(data['channelId']);
+    //         }
+    //     }
+    // }
+    //
+    // notifiedUpdateMessenger = (data) => {
+    //     if ($bean.isNotEmpty(data) && $bean.isNotEmpty(this.state.suggestedChats)) {
+    //         for (let i = 0; i < this.suggestedChats.length; i++) {
+    //             if (this.state.suggestedChats[i].id == data['channelId']) {
+    //                 if (this.state.suggestedChats[i]['lastMessengerId'] == data['value'].id) {
+    //                     this.state.suggestedChats[i]['lastMessage'] = data.value.message;
+    //                     this.state.suggestedChats[i]['lastWorkingDate'] = new Date(data.value.createdAt).getTime();
+    //                     this.state.suggestedChats[i]['dateFormat'] = this.getFormateDate(new Date(data.value.createdAt).getTime());
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    // notifiedDeleteMessenger = (data) => {
+    //     if ($bean.isNotEmpty(data) && $bean.isNotEmpty(this.state.suggestedChats)) {
+    //         for (let i = 0; i < this.state.suggestedChats.length; i++) {
+    //             if (this.state.suggestedChats[i].id == data['channelId']) {
+    //                 if (this.state.suggestedChats[i]['lastMessengerId'] == data['value'].id) {
+    //                     // Load lại thông tin kênh chat
+    //                     this.getChat(this.state.suggestedChats[i].id);
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    //
     notifiedNewUserChannel = (data) => {
         if ($bean.isNotEmpty(data) && (data['value'].userId == this.state.userLogin['id'])) {
             this.getChat(data['value']['channelId']);
         }
     }
-
-    notifiedUpdateUserChannel = (data) => {
-        if ($bean.isNotEmpty(data) && (data['value'].userId == this.state.userLogin['id'])) {
-            if (this.state.statusUserChannels.hasOwnProperty(data['channelId'])) {
-                this.state.statusUserChannels[data['channelId']] = data['value']['unReadMessengers'];
-                this.countUnreadChats();
-            }
-        }
-    }
-
-    notifiedDeleteUserChannel = (data) => {
-        if ($bean.isNotEmpty(data) && (data['value'].userId == this.state.userLogin['id']) && ($bean.isNotEmpty(this.state.suggestedChats))) {
-            for (let i = 0; i < this.state.suggestedChats.length; i++) {
-                if (this.state.suggestedChats[i].id == data['value']['channelId']) {
-                    this.state.suggestedChats.splice(i, 1);
-                    delete this.state.statusUserChannels[data['value']['channelId']];
-                    this.countUnreadChats();
-                    this.changeSuggestedChats();
-                    break;
-                }
-            }
-        }
-    }
+    //
+    // notifiedUpdateUserChannel = (data) => {
+    //     if ($bean.isNotEmpty(data) && (data['value'].userId == this.state.userLogin['id'])) {
+    //         if (this.state.statusUserChannels.hasOwnProperty(data['channelId'])) {
+    //             this.state.statusUserChannels[data['channelId']] = data['value']['unReadMessengers'];
+    //             this.countUnreadChats();
+    //         }
+    //     }
+    // }
+    //
+    // notifiedDeleteUserChannel = (data) => {
+    //     if ($bean.isNotEmpty(data) && (data['value'].userId == this.state.userLogin['id']) && ($bean.isNotEmpty(this.state.suggestedChats))) {
+    //         for (let i = 0; i < this.state.suggestedChats.length; i++) {
+    //             if (this.state.suggestedChats[i].id == data['value']['channelId']) {
+    //                 this.state.suggestedChats.splice(i, 1);
+    //                 delete this.state.statusUserChannels[data['value']['channelId']];
+    //                 this.countUnreadChats();
+    //                 this.changeSuggestedChats();
+    //                 break;
+    //             }
+    //         }
+    //     }
+    // }
 
     changeSuggestedChats = () => {
         // this.globalService.suggestedChats.next({
@@ -760,12 +737,12 @@ class ChatScreen extends React.Component {
     }
 
 
-    sendMessage = (text) => {
-        console.log(text);
-        console.log(this.state.state.ws);
-        console.log(this.state.state.ws.send("abc"));
-        this.state.state.ws.send(JSON.stringify(text));
-    }
+    // sendMessage = (text) => {
+    //     console.log(text);
+    //     console.log(this.state.state.ws);
+    //     console.log(this.state.state.ws.send("abc"));
+    //     this.state.state.ws.send(JSON.stringify(text));
+    // }
 
     static navigationOptions = ({navigation}) => {
         return {
@@ -777,12 +754,6 @@ class ChatScreen extends React.Component {
             ),
         };
     };
-
-    componentDidMount() {
-        this.props.navigation.setParams({goLandPageScreen: this._goLandPageScreen});
-        this.props.navigation.setParams({goUserProfileSettingScreen: this._goUserProfileSettingScreen});
-        this.props.navigation.setParams({goNewChatPageStart: this._goNewChatStartScreen});
-    }
 
     _goLandPageScreen = () => {
         this.props.navigation.navigate('LandPageScreen');
@@ -797,7 +768,7 @@ class ChatScreen extends React.Component {
     }
 
     _goChatDetailScreen = (chat) => {
-
+        this.props.accessChat(chat);
         this.props.navigation.navigate('ChatDetailScreen');
     }
 
@@ -820,7 +791,7 @@ class ChatScreen extends React.Component {
     )
 
     renderAvatar = ({item}) => (
-        <BoxShortInfoUser contact={item} goChatDetailScreen={this._goChatDetailScreen}/>
+        <BoxShortInfoUser contact={item} callBack={this._goChatDetailScreen}/>
     )
 
     render() {
@@ -842,6 +813,7 @@ class ChatScreen extends React.Component {
                         <FlatList
                             keyExtractor={this.keyExtractor}
                             data={this.state.suggestedContacts}
+                            extraData={this.state}
                             horizontal={true}
                             renderItem={this.renderAvatar}
                         />
@@ -851,6 +823,7 @@ class ChatScreen extends React.Component {
                         <FlatList
                             keyExtractor={this.keyExtractor}
                             data={this.state.suggestedChats}
+                            extraData={this.state}
                             renderItem={this.renderItem}
                         />
                     </View>
@@ -982,11 +955,17 @@ const styles = StyleSheet.create({
 
 function mapState(state) {
     const {user} = state.authentication;
-    return {user: user};
+    const {suggestedChats} = state.users;
+    const {newChat} = state.users;
+    return {user, suggestedChats, newChat};
 }
 
 const actionCreators = {
-    accessChat: userActions.accessChat
+    accessChat: userActions.accessChat,
+    suggestContacts: userActions.suggestContacts,
+    suggestChats: userActions.suggestChats,
+    hasNewChat: userActions.newChat,
+    hasNewMessenger: userActions.newMessenger
 };
 
 const connectedToChatScreen = connect(mapState, actionCreators)(ChatScreen);

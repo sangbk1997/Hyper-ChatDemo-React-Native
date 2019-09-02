@@ -6,7 +6,8 @@ import {Icon, Input, ListItem, SearchBar, ButtonGroup} from "react-native-elemen
 import {userActions} from "../_actions";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {connect} from "react-redux";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
 
@@ -117,7 +118,7 @@ class SearchStartScreen extends React.Component {
     )
 
     renderAvatar = ({item}) => (
-        <BoxShortInfoUser ChatDetailScreen={this._goChatDetailScreen}/>
+        <BoxShortInfoUser callBack={this._goChatDetailScreen}/>
     )
 
 
@@ -130,7 +131,7 @@ class SearchStartScreen extends React.Component {
                     <View>
                         <ButtonGroup
                             containerStyle={styles.search_categories}
-                            onPress={this.updateIndex}
+                            onPress={() => this.updateIndex}
                             selectedIndex={selectedIndex}
                             buttons={buttons}
                         />

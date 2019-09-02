@@ -13,7 +13,7 @@ class BoxShortInfoUser extends React.Component {
             <View>
                 <View style={styles.container}>
                     <Avatar
-                        onPress={() => this.props.ChatDetailScreen()}
+                        onPress={() => this.props.callBack(this.props.contact)}
                         rounded
                         source={{
                             uri:
@@ -21,7 +21,7 @@ class BoxShortInfoUser extends React.Component {
                         }}
                     />
                     <Text style={styles.app_name}
-                          onPress={() => this.props.goChatDetailScreen(this.props.contact)}>{this.props.contact.username}</Text>
+                          onPress={() => this.props.callBack(this.props.contact)}>{this.props.contact.username}</Text>
                 </View>
             </View>
         );

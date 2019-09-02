@@ -5,7 +5,9 @@ import BoxShortInfoUser from "../_components/boxs/box-short-info-user";
 import {Avatar, Button, Icon, ListItem} from "react-native-elements";
 import {connect} from "react-redux";
 import {showMessage, hideMessage} from "react-native-flash-message";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
+
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
 
@@ -98,7 +100,7 @@ class UserProfileSettingScreen extends React.Component {
                 <View style={styles.content}>
                     <View style={styles.short_info_chat}>
                         <Avatar
-                            onPress={this.props.navigation.getParam('goInfoChat')}
+                            onPress={() => this.props.navigation.getParam('goInfoChat')}
                             rounded
                             size="large"
                             source={{

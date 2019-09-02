@@ -1,12 +1,14 @@
 import React from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, StyleSheet, Text, View, ScrollView} from 'react-native';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 import BoxShortInfoUser from "../_components/boxs/box-short-info-user";
 import {Button, Icon, ListItem} from "react-native-elements";
 import {userActions} from "../_actions";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {connect} from "react-redux";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
+
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
 
@@ -108,11 +110,18 @@ class HeaderRightNewGroup extends React.Component {
 class NewGroupProcessScreen extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            suggestedContacts: [],
+            selectedContacts: []
+        }
     }
 
     componentDidMount() {
         this.props.navigation.setParams({NewGroupFinishScreen: this._goNewGroupFinishScreen});
-        console.log('Mount New Group Process')
+        this.setState({
+            selectedContacts: this.props.selectedContacts || [],
+            suggestedContacts: this.props.suggestedContacts || []
+        })
     }
 
 
@@ -132,6 +141,8 @@ class NewGroupProcessScreen extends React.Component {
     }
 
     _goNewGroupFinishScreen = () => {
+        console.log(this.state.selectedContacts);
+        this.props.sendSelectedContact(this.state.selectedContacts);
         this.props.navigation.navigate('NewGroupFinishScreen');
     }
 
@@ -139,23 +150,85 @@ class NewGroupProcessScreen extends React.Component {
 
     renderItem = ({item}) => (
         <ListItem
-            title={item.name}
-            subtitle={item.subtitle}
+            title={item.username}
+            subtitle={item.email}
             leftAvatar={{
-                source: item.avatar_url && {uri: item.avatar_url},
-                title: item.name[0]
+                source: list[0].avatar_url && {uri: list[0].avatar_url},
+                title: item.email
             }}
-            onPress={() => this.props.navigation.navigate('ChatDetailScreen')}
+            rightIcon={
+                <Icon
+                    // name={item.selected ? 'toggle-on' : 'toggle-off'}
+                    name='toggle-off'
+                    size={24}
+                    color='green'
+                    type='font-awesome'
+                />
+            }
+            onPress={() => this.selectContact(item)}
         />
     )
 
     renderAvatar = ({item}) => (
-        <BoxShortInfoUser ChatDetailScreen={this._goChatDetailScreen}/>
+        <BoxShortInfoUser contact={item} callBack={this.removeContact}/>
     )
+
+    selectContact = (contact) => {
+        if ($bean.isNotEmpty(contact)) {
+            let selectedContacts = this.state.selectedContacts;
+            let suggestedContacts = this.state.suggestedContacts;
+            // let found = false;
+            // let index = 0;
+            // for (let i = 0; i < selectedContacts.length; i++) {
+            //     if (selectedContacts[i].id == contact.id) {
+            //         selectedContacts.splice(i, 1);
+            //         suggestedContacts.push(contact);
+            //         found = true;
+            //         index = i;
+            //     }
+            // }
+            // if (!found) {
+            //     selectedContacts.push(contact);
+            //     suggestedContacts.splice(index, 1)
+            // }
+            for (let i = 0; i < suggestedContacts.length; i++) {
+                if (suggestedContacts[i].id == contact.id) {
+                    suggestedContacts.splice(i, 1);
+                    selectedContacts.push(contact);
+                }
+            }
+            this.setState({
+                selectedContacts: selectedContacts,
+                suggestedContacts: suggestedContacts
+            })
+        }
+    }
+
+    removeContact = (contact) => {
+        if ($bean.isNotEmpty(contact) && $bean.isNotEmpty(this.state.selectedContacts)) {
+            let selectedContacts = this.state.selectedContacts;
+            let suggestedContacts = this.state.suggestedContacts;
+            for (let i = 0; i < selectedContacts.length; i++) {
+                if (selectedContacts[i].id == contact.id) {
+                    selectedContacts.splice(i, 1);
+                    suggestedContacts.push(contact);
+                }
+            }
+            this.setState({
+                selectedContacts: selectedContacts,
+                suggestedContacts: suggestedContacts
+            })
+        }
+    }
 
 
     render() {
-
+        console.log('Re Render');
+        console.log(this.state);
+        console.log(this.state.selectedContacts);
+        console.log(this.state.suggestedContacts);
+        const selectedContacts = this.state.selectedContacts;
+        const suggestedContacts = this.state.suggestedContacts;
         return (
             <View style={styles.container}>
                 <View style={styles.content}>
@@ -181,7 +254,8 @@ class NewGroupProcessScreen extends React.Component {
                             {/*<ShortInfoUser ChatDetailScreen={this._goChatDetailScreen}/>*/}
                             <FlatList
                                 keyExtractor={this.keyExtractor}
-                                data={list}
+                                data={this.state.selectedContacts}
+                                extraData={this.state}
                                 horizontal={true}
                                 renderItem={this.renderAvatar}
                             />
@@ -192,7 +266,8 @@ class NewGroupProcessScreen extends React.Component {
                         <View style={styles.list_chat_box}>
                             <FlatList
                                 keyExtractor={this.keyExtractor}
-                                data={list}
+                                data={this.state.suggestedContacts}
+                                extraData={this.state}
                                 renderItem={this.renderItem}
                             />
                         </View>
@@ -301,12 +376,15 @@ const styles = StyleSheet.create({
 });
 
 function mapState(state) {
-    const {user} = state.registration
-    return {user};
+    const {user} = state.registration;
+    const {selectedContacts} = state.users
+    const {suggestedContacts} = state.users
+    return {user, selectedContacts, suggestedContacts};
 }
 
 const actionCreators = {
-    login: userActions.login
+    login: userActions.login,
+    sendSelectedContact: userActions.sendSelectedContacts
 };
 
 const connectedToNewGroupProcessScreen = connect(mapState, actionCreators)(NewGroupProcessScreen);

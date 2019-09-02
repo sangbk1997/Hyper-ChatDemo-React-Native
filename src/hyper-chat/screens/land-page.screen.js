@@ -19,7 +19,9 @@ import ModalChatActivities from "../_components/modals/modal-chat-activities";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {UserProfileSettingScreen} from "./user-profile-setting.screen";
 import {AddMembersToChatScreen} from "./add-members-to-chat.screen";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {InfoContactScreen} from "./info-contact.screen";
+
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
 
@@ -100,6 +102,7 @@ const AppNavigator = createStackNavigator({
         NewGroupProcessScreen: NewGroupProcessScreen,
         NewGroupFinishScreen: NewGroupFinishScreen,
         InfoGroupChatScreen: InfoGroupChatScreen,
+        InfoContactScreen: InfoContactScreen,
         ForwardMessageScreen: ForwardMessageScreen,
         AddMembersToChatScreen: AddMembersToChatScreen,
         UserProfileSettingScreen: UserProfileSettingScreen,

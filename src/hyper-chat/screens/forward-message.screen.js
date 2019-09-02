@@ -5,7 +5,9 @@ import BoxShortInfoUser from "../_components/boxs/box-short-info-user";
 import {Button, Icon, ListItem} from "react-native-elements";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {connect} from "react-redux";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
+
 
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
@@ -62,7 +64,7 @@ class HeaderRightNewGroup extends React.Component {
                         title="Kết thúc"
                         titleStyle={{color: '#fff'}}
                         type="outline"
-                        onPress={this.props.navigation.getParam('finishForwardMessage')}
+                        onPress={() => this.props.navigation.getParam('finishForwardMessage')}
                     />
                 </View>
             </View>

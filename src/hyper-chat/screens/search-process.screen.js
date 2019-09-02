@@ -5,7 +5,8 @@ import {Avatar, Icon} from "react-native-elements";
 import {userActions} from "../_actions";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {connect} from "react-redux";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
 
@@ -15,7 +16,7 @@ class HeaderCenterChatDetail extends React.Component {
             <View style={styles.header_left}>
                 <View style={styles.header_item}>
                     <Avatar
-                        onPress={this.props.navigation.getParam('goInfoChat')}
+                        onPress={() => this.props.navigation.getParam('goInfoChat')}
                         rounded
                         source={{
                             uri:
@@ -25,9 +26,9 @@ class HeaderCenterChatDetail extends React.Component {
                 </View>
                 <View style={styles.header_item}>
                     <Text style={{color: '#fff', fontSize: 14}}
-                          onPress={this.props.navigation.getParam('goInfoChat')}>Nguyễn Bình Sang</Text>
+                          onPress={() => this.props.navigation.getParam('goInfoChat')}>Nguyễn Bình Sang</Text>
                     <Text style={{color: '#fff', fontSize: 12}}
-                          onPress={this.props.navigation.getParam('goInfoChat')}>Truy cập 2h trước</Text>
+                          onPress={() => this.props.navigation.getParam('goInfoChat')}>Truy cập 2h trước</Text>
                 </View>
             </View>
         )
@@ -43,7 +44,7 @@ class HeaderRightChatDetail extends React.Component {
                 </View>
                 <View style={styles.header_item}>
                     <Icon name="md-information-circle-outline" color="#fff" size={30} type="ionicon"
-                          onPress={this.props.navigation.getParam('goInfoChat')}/>
+                          onPress={() => this.props.navigation.getParam('goInfoChat')}/>
                 </View>
             </View>
         )

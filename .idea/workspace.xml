@@ -2,162 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4221f6e-ef26-4b1c-9e92-454c1000a92f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/components/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/screens/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/screens/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/screens/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/app/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/app/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/app/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/app/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/user/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/user/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/user/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app-login/store/modules/user/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ActivityIndicatorExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AlertExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AnimateExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BackHandlerExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ButtonExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DatePickerExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DrawerExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EmojisExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FlatListExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/IconExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ImageBackgroundExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ImageExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InputAccessaryViewExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InputAccessoryViewExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InputExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/KeyboardExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LayoutAnimatedExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ModalExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PageViewExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PickerExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProgressBarExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SelectionExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SliderExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StatusBarExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TimeDatePickerAndroid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ToastExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ToolBarExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/react-native-elements/AvatarExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/react-native-elements/BagedExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/react-native-elements/ButtonExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/routing/about.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/routing/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/routing/routers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_actions/alert.actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_actions/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/KeyboardBehavior.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/ModalExp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/PrivateRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-activities-messenger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-detail-users-read-messenger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-emojis-react-messenger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-emojis.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-info-chat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-info-user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-input-search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-list-messenger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-logo-hyper-chat-2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-logo-hyper.chat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-react-emojis-users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-react-messenger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-send-messenger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-user-read-messenger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/modals/modal-box-gallery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/modals/modal-chat-activities.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/modals/modal-confirm-logout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_components/modals/modal-more-chat-activities.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/alert.constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_helpers/auth-header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_helpers/fake-backend.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_helpers/history.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_helpers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_helpers/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_reducers/alert.reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_reducers/authentication.reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_reducers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_reducers/registration.reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_services/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_services/user.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/css-app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/arrow-right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/contacts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/information.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/left-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/lock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/magnifying-glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/mail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/messenger (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/messenger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/microphone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/more-features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/notification.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/phone-call.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/photo-camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/right-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/smile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/speech-bubble.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-bean-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-common-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-date-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/static/js/pushstream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/pushstream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/attach-info-chat-modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/chat-detail-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/chats-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/contacts-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/forward-message-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/home-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/info-group-chat-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/land-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/log-hyper-chat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/login-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/logo-hyper-chat-2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/new-chat-page-start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/new-group-page-finish.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/new-group-page-process.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/search-page-process.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/search-page-start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/short-info-user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/signup-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/css-app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/hyper-request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/info-contact.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,116 +34,140 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#608#676#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/babel.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_PLUGINS_DIR$/NodeJS/lib/NodeJS.jar!/com/jetbrains/nodejs/packageJson/packageJsonSchema.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hyper-chat/_services/user.service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#76#122#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3502">
-              <caret line="206" column="4" selection-start-line="206" selection-start-column="4" selection-end-line="207" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#454#522#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.4379147">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="16252">
+                  <caret line="966" column="32" selection-start-line="966" selection-start-column="32" selection-end-line="966" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                    <element signature="e#625#671#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4080">
+                  <caret line="242" column="10" selection-start-line="242" selection-start-column="10" selection-end-line="242" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#44#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="442">
+                  <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4488">
+                  <caret line="274" column="29" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4437">
+                  <caret line="270" column="60" selection-start-line="270" selection-start-column="60" selection-end-line="270" selection-end-column="60" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5797">
+                  <caret line="355" column="5" selection-start-line="355" selection-start-column="5" selection-end-line="355" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="199">
+                  <caret line="467" column="3" lean-forward="true" selection-start-line="467" selection-start-column="3" selection-end-line="467" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-contact.screen.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="318">
+                  <caret line="342" column="29" selection-start-line="342" selection-start-column="29" selection-end-line="342" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -288,42 +180,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>any</find>
-      <find>navigation</find>
-      <find>.navigation</find>
-      <find>axios.post</find>
-      <find>this.props.u</find>
-      <find>this.props.auth</find>
-      <find>.user</find>
-      <find>data[</find>
-      <find>mobileLogin</find>
-      <find>resetViewChat</find>
-      <find>data</find>
-      <find>PUSH_STREAM_SERVER</find>
-      <find>data.t</find>
-      <find>getLIs</find>
+      <find>selectedContacts</find>
+      <find>keyExtractor</find>
+      <find>showMessage</find>
+      <find>new</find>
       <find>changeSuggestedChats</find>
-      <find>sortChatsByTimeWorking</find>
-      <find>SomeThing</find>
-      <find>$</find>
-      <find>this.</find>
-      <find>modifiedChats.push</find>
-      <find>modifiedChats</find>
+      <find>modif</find>
+      <find>props</find>
       <find>suggestedChats</find>
-      <find>list</find>
-      <find>renderItem</find>
-      <find>baseU</find>
-      <find>accessChat</find>
-      <find>render</find>
-      <find>user</find>
-      <find>getAll</find>
-      <find>Đã có lỗi</find>
+      <find>suggestChats</find>
+      <find>ws.</find>
+      <find>getChat</find>
+      <find>props.</find>
+      <find>componentD</find>
+      <find>hasNewChat</find>
+      <find>props.new</find>
+      <find>channelId</find>
+      <find>requestChat</find>
+      <find>sendRequestChat</find>
+      <find>this.props.navigation.getParam</find>
+      <find>getInfo</find>
+      <find>users</find>
+      <find>NewChatStartScreen</find>
+      <find>goNewChatPageStart</find>
+      <find>notif</find>
+      <find>push</find>
+      <find>goInfoChat</find>
+      <find>infoChat</find>
+      <find>INFO_CHAT</find>
+      <find>sendInfoChat</find>
+      <find>this.props</find>
     </findStrings>
     <replaceStrings>
-      <replace>headerCenterContainer</replace>
-      <replace>_deleteChooseChat</replace>
-      <replace>_finishForwardMessage</replace>
-      <replace>SearchProcessScreen</replace>
       <replace>goLandPageScreen</replace>
       <replace>LoginScreen</replace>
       <replace>SignUpScreen</replace>
@@ -350,6 +238,10 @@
       <replace>this.state.</replace>
       <replace>res</replace>
       <replace>res.data</replace>
+      <replace>hyperRequest</replace>
+      <replace>selectedContacts</replace>
+      <replace>_goInfoC</replace>
+      <replace>InfoContactScreen</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -358,9 +250,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/short-info-user.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-emojis.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-emojis-react-messenger.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-info-chat.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-info-user.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-input-search.js" />
@@ -376,39 +265,42 @@
         <option value="$PROJECT_DIR$/src/hyper-chat/_components/modals/modal-more-chat-activities.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_components/modals/modal-chat-activities.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_constants/index.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/_services/user.service.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_reducers/index.js" />
         <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/add-user-to-chat.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-activities-messenger.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_actions/alert.actions.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_reducers/alert.reducer.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_reducers/authentication.reducer.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_reducers/registration.reducer.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-bean-utils.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/_services/user.service.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/_constants/hyper-request.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js" />
+        <option value="$PROJECT_DIR$/src/screens/new-chat-page-start.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-bean-utils.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js" />
+        <option value="$PROJECT_DIR$/src/hyper-chat/screens/info-contact.screen.js" />
         <option value="$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js" />
-        <option value="$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js" />
-        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -428,6 +320,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -566,15 +460,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566518513122" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566778717738" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -632,18 +524,23 @@
       <workItem from="1566185600168" duration="2233000" />
       <workItem from="1566479471561" duration="3571000" />
       <workItem from="1566523415660" duration="4985000" />
-      <workItem from="1566531000395" duration="875000" />
+      <workItem from="1566531000395" duration="7813000" />
+      <workItem from="1566579694631" duration="23758000" />
+      <workItem from="1566640608108" duration="2621000" />
+      <workItem from="1566695704868" duration="37477000" />
+      <workItem from="1566775633151" duration="3009000" />
+      <workItem from="1566781227029" duration="263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297796000" />
+    <option name="totallyTimeSpent" value="371862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32753405" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20499243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -661,7 +558,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19745223" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.0477707" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.46972176" />
@@ -717,62 +614,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/react-native-elements/src/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="1244" column="17" lean-forward="true" selection-start-line="1244" selection-start-column="17" selection-end-line="1244" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-native-web/dist/exports/TextInput/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="476" column="15" selection-start-line="476" selection-start-column="15" selection-end-line="476" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-detail-users-read-messenger.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/modals/modal-chat-activities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/ModalExp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="114" column="19" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-activities-messenger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-emojis.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-emojis-react-messenger.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_services/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hyper-chat/_actions/alert.actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -811,105 +652,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_helpers/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="e#1#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hyper-chat/_helpers/auth-header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -932,63 +679,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_helpers/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_reducers/authentication.reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4845">
-          <caret line="306" column="8" selection-start-line="306" selection-start-column="8" selection-end-line="306" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="135" column="55" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Login/components/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-bean-utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20723">
-          <caret line="1219" column="9" selection-start-line="1219" selection-start-column="9" selection-end-line="1219" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="167" column="24" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16626">
-          <caret line="988" column="37" selection-start-line="988" selection-start-column="37" selection-end-line="988" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1003,103 +699,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6698">
-          <caret line="404" selection-start-line="404" selection-end-line="404" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hyper-chat/_actions/index.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/babel.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_services/user.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#76#122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="206" column="4" selection-start-line="206" selection-start-column="4" selection-end-line="207" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#454#522#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,9 +716,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="42" column="4" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native/Libraries/react-native/react-native-implementation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="215" column="6" selection-start-line="215" selection-start-column="6" selection-end-line="215" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_helpers/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_helpers/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="e#1#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_services/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2363">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/hyper-request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_reducers/authentication.reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native-elements/src/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/new-chat-page-start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-bean-utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/static/js/hyper/hyd-common-utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4709">
+          <caret line="277" column="41" lean-forward="true" selection-start-line="277" selection-start-column="41" selection-end-line="277" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="167" column="24" selection-start-line="167" selection-start-column="24" selection-end-line="167" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="663">
           <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1121,10 +836,211 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        <state relative-caret-position="17">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="306" column="8" selection-start-line="306" selection-start-column="8" selection-end-line="306" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_services/user.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#76#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/chat-detail-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#497#565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native-flash-message/src/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="121" column="8" lean-forward="true" selection-start-line="121" selection-start-column="8" selection-end-line="124" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16252">
+          <caret line="966" column="32" selection-start-line="966" selection-start-column="32" selection-end-line="966" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#625#671#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4080">
+          <caret line="242" column="10" selection-start-line="242" selection-start-column="10" selection-end-line="242" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4488">
+          <caret line="274" column="29" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4437">
+          <caret line="270" column="60" selection-start-line="270" selection-start-column="60" selection-end-line="270" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5797">
+          <caret line="355" column="5" selection-start-line="355" selection-start-column="5" selection-end-line="355" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-contact.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="342" column="29" selection-start-line="342" selection-start-column="29" selection-end-line="342" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="467" column="3" lean-forward="true" selection-start-line="467" selection-start-column="3" selection-end-line="467" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>

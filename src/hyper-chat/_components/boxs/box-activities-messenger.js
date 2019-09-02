@@ -17,59 +17,33 @@ export default class BoxActivitiesMessenger extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            visibleModalId: null
+        }
     }
+
+    renderModalContent = () => (
+        <View style={styles.content}>
+            <Text style={styles.contentTitle}>Hi 👋!</Text>
+            <Button
+                onPress={() => this.props.closeModal()}
+                title="Close"
+            />
+        </View>
+    );
 
     render() {
         return (
             <View style={styles.container}>
                 <Modal
+                    backdropColor='white'
+                    backdropOpacity={0}
                     isVisible={this.props.isVisible}
+                    onSwipeComplete={() => this.setState({visibleModal: null})}
                     swipeDirection={['up', 'left', 'right', 'down']}
-                    onSwipeComplete={() => this.props.closeModal()}
                     style={styles.bottomModal}
                 >
-                    <View style={styles.content}>
-                        <View style={styles.item_activity}>
-                            <Avatar
-                                size="large"
-                                icon={{name: 'rocket', color: 'orange', type: 'font-awesome'}}
-                                overlayContainerStyle={{backgroundColor: 'white'}}
-                                onPress={() => console.log("Works!")}
-                                activeOpacity={0.7}
-                                containerStyle={{flex: 4, marginTop: 75}}
-                            />
-                        </View>
-                        <View style={styles.item_activity}>
-                            <Avatar
-                                size="large"
-                                icon={{name: 'rocket', color: 'orange', type: 'font-awesome'}}
-                                overlayContainerStyle={{backgroundColor: 'white'}}
-                                onPress={() => console.log("Works!")}
-                                activeOpacity={0.7}
-                                containerStyle={{flex: 4, marginTop: 75}}
-                            />
-                        </View>
-                        <View style={styles.item_activity}>
-                            <Avatar
-                                size="large"
-                                icon={{name: 'rocket', color: 'orange', type: 'font-awesome'}}
-                                overlayContainerStyle={{backgroundColor: 'white'}}
-                                onPress={() => console.log("Works!")}
-                                activeOpacity={0.7}
-                                containerStyle={{flex: 4, marginTop: 75}}
-                            />
-                        </View>
-                        <View style={styles.item_activity}>
-                            <Avatar
-                                size="large"
-                                icon={{name: 'rocket', color: 'orange', type: 'font-awesome'}}
-                                overlayContainerStyle={{backgroundColor: 'white'}}
-                                onPress={() => console.log("Works!")}
-                                activeOpacity={0.7}
-                                containerStyle={{flex: 4, marginTop: 75}}
-                            />
-                        </View>
-                    </View>
+                    {this.renderModalContent()}
                 </Modal>
             </View>
         );
@@ -80,21 +54,22 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: 'blue',
     },
     content: {
-        backgroundColor: 'white',
-        // height: screenHeight / 2,
+        backgroundColor: 'blue',
+        padding: 22,
+        justifyContent: 'center',
+        alignItems: 'center',
         borderRadius: 4,
         borderColor: 'rgba(0, 0, 0, 0.1)',
-        flexDirection: 'row'
+    },
+    contentTitle: {
+        fontSize: 20,
+        marginBottom: 12
     },
     bottomModal: {
         justifyContent: 'flex-end',
-        margin: 0
+        margin: 0,
     },
-
-    item_activity: {
-        padding: 5
-    }
 });

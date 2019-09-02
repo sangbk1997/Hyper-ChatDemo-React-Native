@@ -4,8 +4,9 @@ import {getStatusBarHeight} from 'react-native-status-bar-height';
 import BoxShortInfoUser from "../_components/boxs/box-short-info-user";
 import {Button, ButtonGroup, Icon, ListItem} from "react-native-elements";
 import {showMessage, hideMessage} from "react-native-flash-message";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
 import {configConstants} from "../_constants";
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
 import {connect} from "react-redux";
 
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
@@ -74,7 +75,7 @@ class ContactsScreen extends React.Component {
         }
         let $this = this;
         this.updateIndex = this.updateIndex.bind(this);
-        axios.get(configConstants.PREFIX_APP_SERVER + 'users')
+        hyperRequest.get(configConstants.PREFIX_APP_SERVER + 'users')
             .then(function (response) {
                 // handle success
                 console.log(response);

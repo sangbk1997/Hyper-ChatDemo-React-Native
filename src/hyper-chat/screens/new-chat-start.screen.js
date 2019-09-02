@@ -3,7 +3,8 @@ import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 import BoxShortInfoUser from "../_components/boxs/box-short-info-user";
 import {Button, Icon, ListItem} from "react-native-elements";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
 import {userActions} from "../_actions";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {connect} from "react-redux";
@@ -82,17 +83,17 @@ class NewChatStartScreen extends React.Component {
 
     renderItem = ({item}) => (
         <ListItem
-            title={item.name}
-            subtitle={item.subtitle}
+            title={item.username}
+            subtitle={item.email}
             leftAvatar={{
-                source: item.avatar_url && {uri: item.avatar_url},
-                title: item.name[0]
+                source: list[0].avatar_url && {uri: list[0].avatar_url},
+                title: item.email
             }}
             onPress={() => this.props.navigation.navigate('ChatDetailScreen')}
         />
     )
     renderAvatar = ({item}) => (
-        <BoxShortInfoUser ChatDetailScreen={this._goChatDetailScreen}/>
+        <BoxShortInfoUser contact={item} callBack={this._goChatDetailScreen}/>
     )
 
     render() {
@@ -134,7 +135,7 @@ class NewChatStartScreen extends React.Component {
                             {/*<ShortInfoUser ChatDetailScreen={this._goChatDetailScreen}/>*/}
                             <FlatList
                                 keyExtractor={this.keyExtractor}
-                                data={list}
+                                data={this.props.suggestedContacts}
                                 horizontal={true}
                                 renderItem={this.renderAvatar}
                             />
@@ -145,7 +146,7 @@ class NewChatStartScreen extends React.Component {
                         <View style={styles.list_chat_box}>
                             <FlatList
                                 keyExtractor={this.keyExtractor}
-                                data={list}
+                                data={this.props.suggestedContacts}
                                 renderItem={this.renderItem}
                             />
                         </View>
@@ -254,8 +255,9 @@ const styles = StyleSheet.create({
 });
 
 function mapState(state) {
-    const {user} = state.registration
-    return {user};
+    const {user} = state.registration;
+    const {suggestedContacts} = state.users
+    return {user, suggestedContacts};
 }
 
 const actionCreators = {

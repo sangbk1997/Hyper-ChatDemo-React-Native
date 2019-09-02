@@ -3,7 +3,7 @@
 
 import {configConstants} from "../_constants";
 
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
 
 export const userService = {
     login,
@@ -22,11 +22,11 @@ function login(email, password) {
         email: email,
         password: password
     }
-    return axios.post(PREFIX_SERVER_APP + 'mobileLogin', bean);
+    return hyperRequest.post(PREFIX_SERVER_APP + 'mobileLogin', bean);
 }
 
 function logout() {
-    return axios.post(PREFIX_SERVER_APP + 'logout', bean);
+    return hyperRequest.post(PREFIX_SERVER_APP + 'logout', bean);
     // remove user from local storage to log user out
     // localStorage.removeItem('user');
 }
@@ -53,7 +53,7 @@ function register(user) {
         email: user.email,
         password: user.password
     }
-    return axios.post(PREFIX_SERVER_APP + 'mobileSignup', bean);
+    return hyperRequest.post(PREFIX_SERVER_APP + 'mobileSignup', bean);
 }
 
 function update(user) {

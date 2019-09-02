@@ -10,7 +10,7 @@ import {Header} from "react-navigation";
 import {userService} from "../_services";
 // import DeviceInfo from 'react-native-device-info';
 import {showMessage, hideMessage} from "react-native-flash-message";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
 
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')

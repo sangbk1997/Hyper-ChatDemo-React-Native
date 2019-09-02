@@ -8,6 +8,7 @@ import {hyperRequest} from '../_constants/hyper-request'
 import {$bean} from "../static/js/hyper/hyd-bean-utils";
 import {showMessage, hideMessage} from "react-native-flash-message";
 import {configConstants} from "../_constants";
+import {userActions} from "../_actions";
 
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
@@ -66,166 +67,70 @@ const list = [
     }
 ]
 
-class InfoGroupChatScreen extends React.Component {
+class InfoContactScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.setState({
             baseUrl: configConstants.PREFIX_APP_SERVER,
-            infoChat: {},
-            linkUserChannel: {},
-            members: [],
-            userCreatedChat: {},
-            cloneInfoChat: {}
-        }
+            infoContact: {},
+            linkUserChannel: {}
+        })
     }
 
     componentDidMount(): void {
         this.setState({
-            infoChat: this.props.infoChat,
-            linkUserChannel: this.props.requestChat,
-            members: this.props.infoChat['users'],
-            cloneInfoChat: this.props.infoChat
+            infoContact: this.props.infoContact,
+            linkUserChannel: this.props.requestChat
         })
-        if ($bean.isNotEmpty(this.props.infoChat) && $bean.isNotEmpty(this.props.infoChat['users'])) {
-            this.getUserCreatedChat(this.props.infoChat['createdBy']);
-        }
     }
 
     static navigationOptions = {
-        title: 'Thông tin Chat'
+        title: 'Thông tin liên lạc'
     };
 
     _goChatDetailScreen = () => {
         this.props.navigation.navigate('ChatDetailScreen');
     }
 
-    getUserCreatedChat = (userId) => {
-        for (let i = 0; i < this.state.members.length; i++) {
-            if (userId == this.state.members[i].id) {
-                let newMembers = this.state.members;
-                newMembers.splice(i, 1);
-                this.setState({
-                    userCreatedChat: this.state.members[i],
-                    members: newMembers
-                })
-                break;
-            }
-        }
-    }
-
-    removeUser = (user) => {
-        let url = this.state.baseUrl + 'users/removeUser';
+    blockContact = (userId) => {
+        // $('#modalBoxContact').modal('hide');
+        let url = this.state.baseUrl + 'users/blockContact';
         let form = {
-            userId: user.id,
-            channelId: this.state.infoChat['id']
+            userId: userId
         }
-        hyperRequest.post(url, form).then(res => {
-            if ($bean.isNotEmpty(res.data)) {
-                console.log('Remove user from chat success !');
-                console.log(res.data);
-                for (let i = 0; i < this.state.members.length; i++) {
-                    if (this.state.members[i].id = res.data['userId']) {
-                        let newMembers = this.state.members;
-                        newMembers.splice(i, 1);
-                        this.setState({
-                            members: newMembers
-                        })
-                        break;
-                    }
-                }
-            }
-        })
-    }
-
-    leaveChat = () => {
-        let url = this.state.baseUrl + 'users/leaveChannel';
-        let form = {
-            channelId: this.state.infoChat['id']
-        }
-        hyperRequest.post(url, form).then(res => {
-            if ($bean.isNotEmpty(res.data)) {
-                console.log('Leave chat success !');
-                console.log(res.data);
-            }
-        })
+        // this.http.post(url, form).subscribe(data => {
+        //   if ($bean.isNotEmpty(data)) {
+        //     console.log('Remove user from chat success !');
+        //     console.log(data);
+        //   }
+        // })
     }
 
     deleteChat = () => {
+        // $('#modalBoxContact').modal('hide');
         let url = this.state.baseUrl + 'users/deleteChannel';
         let form = {
-            channelId: this.state.infoChat['id']
+            channelId: this.state.linkUserChannel['channelId']
         }
         hyperRequest.post(url, form).then(res => {
             if ($bean.isNotEmpty(res.data)) {
                 console.log('Delete chat success !');
+                // this.globalService.newChannel.next(true);
                 console.log(res.data);
             }
         })
     }
 
-    addUserToChat = () => {
-        this.navigation.navigate('AddMembersToChatScreen');
+    addNewGroup = () => {
+        // $('#modalBoxContact').modal('hide');
+        // $('#modalInitAddChannel').modal('show');
+        // reset lại giá trị của đối tượng newChannel
+        // this.globalService.addChannel.next({members: [this.infoContact['id']]});
+        this.props.addUserToNewGroup(this.state.infoContact)
     }
 
-    updateChat = () => {
-        let url = this.state.baseUrl + 'channels/update';
-        let updateChannel = {
-            id: this.state.cloneInfoChat['id'],
-            title: this.state.cloneInfoChat['title']
-        }
-        let form = {
-            channel: updateChannel
-        }
-        hyperRequest.post(url, form).then(res => {
-            if ($bean.isNotEmpty(res.data)) {
-                // $('#modalBoxChat').modal('hide');
-                // console.log('Update chat success !');
-                console.log(res.data);
-            }
-        })
+    sendMessage = () => {
     }
-
-    turnOnNotification = () => {
-        let url = this.state.baseUrl + 'users/turnOnNotification';
-        let form = {
-            channelId: this.state.infoChat['id']
-        }
-        hyperRequest.post(url, form).then(res => {
-            if ($bean.isNotEmpty(res.data)) {
-                console.log('Delete chat success !');
-                this.setState({linkUserChannel: res.data});
-                console.log(res.data);
-                //  Listen lại channel
-            }
-        })
-    }
-
-    turnOffNotification = () => {
-        let url = this.state.baseUrl + 'users/turnOffNotification';
-        let form = {
-            channelId: this.state.infoChat['id']
-        }
-        hyperRequest.post(url, form).then(res => {
-            if ($bean.isNotEmpty(res.data)) {
-                console.log('Delete chat success !');
-                this.setState({linkUserChannel: res.data});
-                console.log(res.data);
-                //  Listen lại channel
-            }
-        })
-    }
-
-    toggleNotification = () => {
-        if (this.state.linkUserChannel['notification']) {
-            this.turnOffNotification();
-        } else {
-            this.turnOnNotification();
-        }
-    }
-
-    sendMessage() {
-    }
-
 
     keyExtractor = (item, index) => index.toString()
 
@@ -258,20 +163,10 @@ class InfoGroupChatScreen extends React.Component {
                                     'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
                             }}
                         />
-                        <Text style={styles.title}>Học UX-UI</Text>
-                        <Text>Được tạo bởi Sang</Text>
+                        <Text style={styles.title}>Nguyễn Thị Hiền</Text>
+                        <Text>Truy cập 2h trước</Text>
                     </View>
                     <View style={styles.fetures}>
-                        <Button
-                            buttonStyle={styles.fetures_item}
-                            icon={
-                                <Icon name="share-google" size={30} type="evilicon"/>
-                            }
-                            iconLeft
-                            title="Chia sẻ nhóm"
-                            type="outline"
-                            onPress={() => this.props.navigation.navigate('NewGroupProcessScreen')}
-                        />
                         <Button
                             buttonStyle={styles.fetures_item}
                             icon={
@@ -292,49 +187,23 @@ class InfoGroupChatScreen extends React.Component {
                             type="outline"
                             onPress={() => this.props.navigation.navigate('NewGroupProcessScreen')}
                         />
-                    </View>
-                    <View>
-                        <Text style={styles.title}>Thành viên</Text>
                         <Button
                             buttonStyle={styles.fetures_item}
                             icon={
-                                <Icon name="adduser" size={30} type="antdesign"/>
+                                <Icon name="group" size={30} type="font-awesome"/>
                             }
                             iconLeft
-                            title="Thêm thành viên"
-                            type="outline"
-                            onPress={() => this.props.navigation.navigate('AddMembersToChatScreen')}
-                        />
-                        <View style={styles.list_chat_box}>
-                            <ScrollView style={styles.box_members}>
-                                {
-                                    list.map((item, index) => (
-                                        this.renderItem(item, index)
-                                    ))
-                                }
-                            </ScrollView>
-                        </View>
-                    </View>
-
-                    <View style={styles.box_setup}>
-                        <Text style={styles.title}>Thiết lập</Text>
-                        <Button
-                            buttonStyle={styles.fetures_item}
-                            icon={
-                                <Icon name="bell" size={30} type="feather" color='yellow'/>
-                            }
-                            iconLeft
-                            title="Thông báo"
+                            title="Tạo nhóm"
                             type="outline"
                             onPress={() => this.props.navigation.navigate('NewGroupProcessScreen')}
                         />
                         <Button
                             buttonStyle={styles.fetures_item}
                             icon={
-                                <Icon name="deleteuser" size={30} type="antdesign" color='red'/>
+                                <Icon name="block" size={30} type="entypo" color='red'/>
                             }
                             iconLeft
-                            title="Rời khỏi nhóm"
+                            title="Chặn"
                             type="outline"
                             onPress={() => this.props.navigation.navigate('NewGroupProcessScreen')}
                         />
@@ -469,13 +338,15 @@ const styles = StyleSheet.create({
 
 function mapState(state) {
     const {user} = state.registration
-    const {infoChat} = state.users
+    const {infoContact} = state.users
     const {requestChat} = state.users
-    return {user, infoChat, requestChat};
+    return {user, infoContact, requestChat};
 }
 
-const actionCreators = {};
+const actionCreators = {
+    addUserToNewGroup: userActions.sendSelectedContacts
+};
 
-const connectedToInfoGroupChatScreen = connect(mapState, actionCreators)(InfoGroupChatScreen);
-export {connectedToInfoGroupChatScreen as InfoGroupChatScreen};
+const connectedToInfoContactScreen = connect(mapState, actionCreators)(InfoContactScreen);
+export {connectedToInfoContactScreen as InfoContactScreen};
 

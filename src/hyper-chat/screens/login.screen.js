@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
+import {AsyncStorage} from 'react-native';
 import {KeyboardAvoidingView} from 'react-native';
 import {createAppContainer, createStackNavigator, Header} from "react-navigation";
 import {getStatusBarHeight} from 'react-native-status-bar-height';
@@ -12,7 +13,8 @@ import LogoHyperChat from "../_components/boxs/box-logo-hyper.chat";
 import BoxLogoHyperChat2 from "../_components/boxs/box-logo-hyper-chat-2";
 import {Icon, Input, Button} from 'react-native-elements';
 import {connect} from "react-redux";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
+import {$bean} from "../static/js/hyper/hyd-bean-utils";
 import {alertActions, userActions} from "../_actions";
 import {userService} from "../_services";
 import {userConstants} from "../_constants";
@@ -37,7 +39,8 @@ class LoginScreen extends React.Component {
             .then(function (response) {
                 // handle success
                 console.log(response);
-                $this.props.storeUser(response.data);
+                AsyncStorage.setItem('token', response.data.token);
+                $this.props.storeUser(response.data.user);
                 $this.props.navigation.navigate('HomeScreen');
             })
             .catch(function (error) {

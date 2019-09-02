@@ -15,7 +15,7 @@ import {SearchProcessScreen} from "./search-process.screen";
 import {NewGroupProcessScreen} from "./new-group-process.screen";
 import ModalChatActivities from "../_components/modals/modal-chat-activities";
 import {showMessage, hideMessage} from "react-native-flash-message";
-import axios from "axios";
+import {hyperRequest} from '../_constants/hyper-request'
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 const appStyles = require('../static/css-app')
 
