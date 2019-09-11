@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4221f6e-ef26-4b1c-9e92-454c1000a92f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/hyper-request.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hyper-chat/screens/info-contact.screen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_actions/user.actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_components/boxs/box-short-info-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/user.constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_reducers/users.reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_services/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/add-members-to-chat.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/chats.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/contacts.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/forward-message.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/home.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/land-page.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/login.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-chat-start.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-finish.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/new-group-process.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/search-process.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/search-start.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/signup.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/screens/user-profile-setting.screen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +107,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5797">
+                <state relative-caret-position="5780">
                   <caret line="355" column="5" selection-start-line="355" selection-start-column="5" selection-end-line="355" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
@@ -140,8 +119,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="467" column="3" lean-forward="true" selection-start-line="467" selection-start-column="3" selection-end-line="467" selection-end-column="3" />
+                <state relative-caret-position="7786">
+                  <caret line="467" column="3" selection-start-line="467" selection-start-column="3" selection-end-line="467" selection-end-column="3" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -180,7 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selectedContacts</find>
       <find>keyExtractor</find>
       <find>showMessage</find>
       <find>new</find>
@@ -210,6 +188,7 @@
       <find>INFO_CHAT</find>
       <find>sendInfoChat</find>
       <find>this.props</find>
+      <find>20.20.11</find>
     </findStrings>
     <replaceStrings>
       <replace>goLandPageScreen</replace>
@@ -320,7 +299,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -460,6 +438,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,6 +451,9 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -530,17 +512,19 @@
       <workItem from="1566695704868" duration="37477000" />
       <workItem from="1566775633151" duration="3009000" />
       <workItem from="1566781227029" duration="263000" />
+      <workItem from="1567473251491" duration="1076000" />
+      <workItem from="1568177921245" duration="1285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371862000" />
+    <option name="totallyTimeSpent" value="374223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20499243" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21104388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1009,8 +993,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/chat-detail.screen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5797">
+        <state relative-caret-position="5780">
           <caret line="355" column="5" selection-start-line="355" selection-start-column="5" selection-end-line="355" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7786">
+          <caret line="467" column="3" selection-start-line="467" selection-start-column="3" selection-end-line="467" selection-end-column="3" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1027,16 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyper-chat/screens/info-group-chat.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="467" column="3" lean-forward="true" selection-start-line="467" selection-start-column="3" selection-end-line="467" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hyper-chat/_constants/config.constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1047,9 +1031,80 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hyper-App</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
